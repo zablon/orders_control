@@ -1,0 +1,34 @@
+<div>
+    <h1>Adding order</h1>
+
+    <form name="addOrder" ng-submit="vmOrder.save()">
+        <label>Дата создания заказа <input type="date" ng-model="vmOrder.order.createDate"></label>
+        <label>Имя менеджера
+            <select ng-model="vmOrder.order.manager">
+                <option value="Ivanov">Ivanov</option>
+                <option value="Sidorov">Sidorov</option>
+                <option value="Manager">Manager</option>
+            </select>
+        </label>
+        <label>Тип заказа
+            <select ng-model="vmOrder.order.type">
+                <option value="opt">опт</option>
+                <option value="roznica">розница</option>
+            </select>
+        </label>
+        <label>Заказчик <input type="text" ng-model="vmOrder.order.customer"></label>
+        <label>Поставщик <input type="text" ng-model="vmOrder.order.provider"></label>
+        <label>Дата выполнения заказа <input type="date" ng-model="vmOrder.order.completeDate"></label>
+        <!--<h1>Tabacco</h1>-->
+        <!--<label> Select Tabacco: </label>-->
+        <!--<select ng-model="vmAddTabacco.tabacco" required>-->
+        <!--<option value="Melon">Melon</option>-->
+        <!--<option value="Watermelon">Watermelon</option>-->
+        <!--<option value="Blackberry">Blackberry</option>-->
+        <!--</select>-->
+        <button type="submit">Add</button>
+    </form>
+    <a ui-sref="order-list">cancel</a>
+    <!--<a href ng-click="vmAddTabacco.setTabacco(tabacco)">Next</a>-->
+    <!--<a href="/liquid"> << Back </a>-->
+</div>

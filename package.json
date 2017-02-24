@@ -1,13 +1,13 @@
 {
-  "name": "hookah",
+  "name": "test",
   "version": "1.0.0",
-  "description": "hookah",
+  "description": "test",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tests": "./node_modules/karma-cli/bin/karma start",
     "build": "./node_modules/.bin/webpack",
-    "dev": "./node_modules/.bin/webpack-dev-server --output-pathinfo --progress --color --open",
+    "dev": "./node_modules/.bin/webpack-dev-server --output-pathinfo --progress --color --open --inline --history-api-fallback",
     "start": "npm run build"
   },
   "repository": {

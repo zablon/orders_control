@@ -1,0 +1,44 @@
+<div>
+    <h1>Orders list</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Create date</th>
+            <th>Type</th>
+            <th>Manager</th>
+            <th>Customer</th>
+            <th>Provider</th>
+            <th>Complete date</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="order in vmOrderList.orders track by $index">
+            <td ng-bind="order.createDate | date:'dd.MM.yyyy'">Bok</td>
+            <td ng-bind="order.type">Bok</td>
+            <td ng-bind="order.manager">Bok</td>
+            <td ng-bind="order.customer">Bok</td>
+            <td ng-bind="order.provider">Bok</td>
+            <td ng-bind="order.completeDate | date:'dd.MM.yyyy'">Bok</td>
+            <td>
+                <button ui-sref="order-edit({id : order.id})" ng-if="vmOrderList.expired3Days(order.completeDate)">Edit</button>
+            </td>
+            <td>
+                <button ng-click="vmOrderList.remove(order)">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!--<form name="liquid">-->
+        <!--<h1>Liquid</h1>-->
+        <!--<label> Select Liquid: </label>-->
+        <!--<select ng-model="vmAddLiquid.liquid" required>-->
+            <!--<option value="Water">Water</option>-->
+            <!--<option value="Juice">Juice</option>-->
+            <!--<option value="Milk">Milk</option>-->
+        <!--</select>-->
+    <!--</form>-->
+    <!--<a href ng-click="vmAddLiquid.setLiquid(liquid)">Next</a>-->
+    <!--<a href="/size"> << Back </a>-->
+</div>
