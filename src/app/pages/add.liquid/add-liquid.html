@@ -1,0 +1,13 @@
+<div>
+    <form name="liquid">
+        <h1>Liquid</h1>
+        <label> Select Liquid: </label>
+        <select ng-model="vmAddLiquid.liquid" required>
+            <option value="Water">Water</option>
+            <option value="Juice">Juice</option>
+            <option value="Milk">Milk</option>
+        </select>
+    </form>
+    <a href ng-click="vmAddLiquid.setLiquid(liquid)">Next</a>
+    <a href="/size"> << Back </a>
+</div>
