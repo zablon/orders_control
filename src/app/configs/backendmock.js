@@ -1,8 +1,7 @@
 export default function ($httpBackend, $window) {
     var orders = angular.fromJson($window.localStorage.getItem('orders')) || [];
 
-    var id = orders[orders.length - 1] + 1;
-
+    var id = 1;
 
     $httpBackend.whenGET('/api/orders').respond(200, orders);
 

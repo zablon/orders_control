@@ -1,0 +1,1 @@
+First of all we need install node and npm then `npm install` and after `npm run dev`

@@ -1,3 +1,19 @@
-form:invalid{
-    border: 2px solid crimson;
+/*form:invalid {*/
+/*border: 2px solid crimson;*/
+/*}*/
+
+.bd-example {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-width: .2rem;
+    position: relative;
+    padding: 1rem;
+    margin: 1rem -1rem;
+    border: solid #f7f7f9;
+}
+
+.err{
+    border: 1px solid crimson;
 }

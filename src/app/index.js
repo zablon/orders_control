@@ -7,8 +7,10 @@ import Backend from './configs/backendmock';
 import SaveService from './services/save.service';
 import OrderApiService from './services/order.api.service';
 
+import 'bootstrap-css';
+
 export default angular
-    .module('hookah', [angularUiRouter])
+    .module('orders', [angularUiRouter])
     .config(routing)
     .run(Backend)
     .service('SaveService', SaveService)

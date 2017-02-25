@@ -1,35 +1,37 @@
-<div>
-    <h1>Orders list</h1>
-    <table>
-        <thead>
-        <tr>
-            <th>Create date</th>
-            <th>Type</th>
-            <th>Manager</th>
-            <th>Customer</th>
-            <th>Provider</th>
-            <th>Complete date</th>
-            <th></th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="order in vmOrderList.orders track by $index">
-            <td ng-bind="order.createDate | date:'dd.MM.yyyy'">Bok</td>
-            <td ng-bind="order.type">Bok</td>
-            <td ng-bind="order.manager">Bok</td>
-            <td ng-bind="order.customer">Bok</td>
-            <td ng-bind="order.provider">Bok</td>
-            <td ng-bind="order.completeDate | date:'dd.MM.yyyy'">Bok</td>
-            <td>
-                <button ui-sref="order-edit({id : order.id})" ng-if="vmOrderList.expired3Days(order.completeDate)">Edit</button>
-            </td>
-            <td>
-                <button ng-click="vmOrderList.remove(order)">Delete</button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+<!--<div>-->
+    <!--<h1>Orders list</h1>-->
+    <!--<table>-->
+        <!--<thead>-->
+        <!--<tr>-->
+            <!--<th>Create date</th>-->
+            <!--<th>Type</th>-->
+            <!--<th>Manager</th>-->
+            <!--<th>Customer</th>-->
+            <!--<th>Provider</th>-->
+            <!--<th>Complete date</th>-->
+            <!--<th></th>-->
+            <!--<th></th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr ng-repeat="order in vmOrderList.orders track by $index">-->
+            <!--<td ng-bind="order.createDate | date:'dd.MM.yyyy'">Bok</td>-->
+            <!--<td ng-bind="order.type">Bok</td>-->
+            <!--<td ng-bind="order.manager">Bok</td>-->
+            <!--<td ng-bind="order.customer">Bok</td>-->
+            <!--<td ng-bind="order.provider">Bok</td>-->
+            <!--<td ng-bind="order.completeDate | date:'dd.MM.yyyy'">Bok</td>-->
+            <!--<td>-->
+                <!--<button ui-sref="order-edit({id : order.id})" ng-if="vmOrderList.expired3Days(order.completeDate)">Edit</button>-->
+            <!--</td>-->
+            <!--<td>-->
+                <!--<button ng-click="vmOrderList.remove(order)">Delete</button>-->
+            <!--</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+    <!--</table>-->
+
+    <!--<a ui-sref="order-add">Add order</a>-->
     <!--<form name="liquid">-->
         <!--<h1>Liquid</h1>-->
         <!--<label> Select Liquid: </label>-->
@@ -41,4 +43,42 @@
     <!--</form>-->
     <!--<a href ng-click="vmAddLiquid.setLiquid(liquid)">Next</a>-->
     <!--<a href="/size"> << Back </a>-->
+<!--</div>-->
+
+<div class="container">
+    <h2>Orders list</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+        <tr>
+            <th>Create date</th>
+            <th>Type</th>
+            <th>Manager</th>
+            <th>Customer</th>
+            <th>Provider</th>
+            <th>Complete date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="order in vmOrderList.orders track by $index">
+            <td ng-bind="order.createDate | date:'dd.MM.yyyy'">Bok</td>
+            <td ng-bind="order.type">Bok</td>
+            <td ng-bind="order.manager">Bok</td>
+            <td ng-bind="order.customer">Bok</td>
+            <td ng-bind="order.provider">Bok</td>
+            <td ng-bind="order.completeDate | date:'dd.MM.yyyy'">Bok</td>
+            <td>
+                <button class="btn btn-default" ui-sref="order-edit({id : order.id})" ng-if="vmOrderList.expired3Days(order.completeDate)">Edit</button>
+                {{order}}
+            </td>
+            <td>
+                <button class="btn btn-default" ng-click="vmOrderList.remove(order)">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a ui-sref="order-add" class="btn btn-default">Add order</a>
 </div>

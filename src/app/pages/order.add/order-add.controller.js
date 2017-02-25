@@ -1,4 +1,5 @@
-export default class OrderAddController {
+export default
+class OrderAddController {
     constructor(OrderApiService, $state) {
         this._orderApiService = OrderApiService;
         this._state = $state;
@@ -6,16 +7,12 @@ export default class OrderAddController {
         this.order = {};
     }
 
-    save(){
-        this._orderApiService.create(this.order).then((response)=>{
-            this._state.go('order-list')
-        });
+    save(form) {
+        if (form) {
+            this._orderApiService.create(this.order).then(() => {
+                this._state.go('order-list')
+            });
+        }
+        return;
     }
-
-    //setTabacco(form) {
-    //    if (form.$valid) {
-    //        this._saveService.saveTabacco(this.tabacco);
-    //        this._state.go('finish');
-    //    }
-    //}
 }
